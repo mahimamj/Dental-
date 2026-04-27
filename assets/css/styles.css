@@ -133,10 +133,58 @@ nav ul {
   gap: 0.6rem;
 }
 
+nav li {
+  position: relative;
+}
+
 nav a {
   padding: 0.5rem 0.7rem;
   border-radius: 8px;
   display: inline-block;
+}
+
+.nav-category details {
+  position: relative;
+}
+
+.nav-category summary {
+  list-style: none;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.nav-category summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-category summary::after {
+  content: " v";
+  font-size: 0.8em;
+}
+
+.nav-category details[open] summary,
+.nav-category summary:hover,
+.nav-category summary:focus-visible {
+  background: var(--surface-alt);
+  color: var(--primary-dark);
+}
+
+.dropdown-menu {
+  margin: 0.45rem 0 0;
+  padding: 0.5rem;
+  list-style: none;
+  display: grid;
+  gap: 0.2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.dropdown-menu a {
+  width: 100%;
 }
 
 nav a:hover,
@@ -500,6 +548,22 @@ footer a {
     padding: 0;
     display: flex;
     gap: 0.2rem;
+    align-items: center;
+  }
+
+  .nav-category details {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.45rem);
+    left: 0;
+    width: 300px;
+    max-height: 70vh;
+    overflow: auto;
+    margin: 0;
+    z-index: 60;
   }
 
   .hero {
