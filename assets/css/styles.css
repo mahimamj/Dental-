@@ -445,7 +445,8 @@ section {
 .faq-grid,
 .content-grid,
 .location-grid,
-.blog-grid {
+.blog-grid,
+.certificate-grid {
   display: grid;
   gap: 0.95rem;
 }
@@ -717,6 +718,20 @@ section {
   border-radius: 0;
 }
 
+.transformation-image {
+  min-height: 0;
+  display: block;
+  background: #ffffff;
+}
+
+.transformation-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  background: #ffffff;
+}
+
 .work-image.after {
   background:
     radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), transparent 36%),
@@ -977,6 +992,56 @@ footer a {
   object-fit: cover;
 }
 
+.certificate-card {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.certificate-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.certificate-card h3 {
+  margin-bottom: 0;
+}
+
+.certificate-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.client-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.client-gallery-item {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 12px 26px rgba(10, 48, 78, 0.1);
+}
+
+.client-gallery-item img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 180ms ease;
+}
+
+.client-gallery-item:hover img {
+  transform: scale(1.02);
+}
+
 .treatment-page .hero {
   padding: 1.25rem 0 0.65rem;
 }
@@ -1120,7 +1185,8 @@ footer a {
   .patient-grid,
   .results-grid,
   .faq-grid,
-  .blog-grid {
+  .blog-grid,
+  .certificate-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -1142,6 +1208,10 @@ footer a {
   .gallery-grid,
   .location-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .client-gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .clinic-image-grid {
@@ -1207,5 +1277,11 @@ footer a {
 
   .treatment-page .sticky-cta {
     width: min(360px, calc(100% - 1.8rem));
+  }
+}
+
+@media (min-width: 1100px) {
+  .client-gallery-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
