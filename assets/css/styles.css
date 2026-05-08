@@ -1170,7 +1170,7 @@ footer a {
 
 .popup-box p {
   margin: 0 0 1.35rem;
-  color: #7b4a2f;
+  color: rgb(8,79,129);
   font-size: clamp(1rem, 3.6vw, 1.25rem);
   font-weight: 700;
   text-align: center;
@@ -1215,7 +1215,7 @@ footer a {
   padding: 0.82rem 2.15rem;
   border: 0;
   border-radius: 10px;
-  background: #7b4a2f;
+  background: rgb(8,79,129);
   color: #ffffff;
   font: inherit;
   font-size: 1.08rem;
