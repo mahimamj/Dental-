@@ -1132,6 +1132,136 @@ footer a {
   font-size: 0.92rem;
 }
 
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(3, 16, 27, 0.62);
+}
+
+.popup-overlay.is-visible {
+  display: flex;
+}
+
+.popup-box {
+  position: relative;
+  width: min(100%, 500px);
+  max-height: min(92vh, 720px);
+  overflow: auto;
+  padding: clamp(1.4rem, 4vw, 1.9rem);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #f7f9fb;
+  box-shadow: 0 24px 70px rgba(3, 16, 27, 0.28);
+  animation: popupAnim 0.38s ease;
+}
+
+.popup-box h2 {
+  margin: 0 1.7rem 0.45rem;
+  color: #111827;
+  font-size: clamp(1.65rem, 7vw, 2.25rem);
+  line-height: 1.12;
+  text-align: center;
+}
+
+.popup-box p {
+  margin: 0 0 1.35rem;
+  color: #7b4a2f;
+  font-size: clamp(1rem, 3.6vw, 1.25rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+.popup-box input,
+.popup-box select {
+  margin: 0 0 0.9rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid #d7dde4;
+  border-radius: 999px;
+  background: #ffffff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.popup-box input:focus,
+.popup-box select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(10, 106, 168, 0.14);
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0 0 0.8rem;
+  color: #334155;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.checkbox input {
+  width: 18px;
+  height: 18px;
+  margin: 0.05rem 0 0;
+  flex: 0 0 auto;
+}
+
+.submit-btn {
+  margin-top: 0.35rem;
+  padding: 0.82rem 2.15rem;
+  border: 0;
+  border-radius: 10px;
+  background: #7b4a2f;
+  color: #ffffff;
+  font: inherit;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.submit-btn:hover,
+.submit-btn:focus-visible {
+  background: #5f341d;
+  transform: translateY(-1px);
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.85rem;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #111827;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus-visible {
+  background: #e7edf3;
+}
+
+@keyframes popupAnim {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (min-width: 760px) {
   .nav-toggle {
     display: none;
